@@ -1,0 +1,225 @@
+@mixin card_color($color){
+	background-color: $color;
+	color: isitlight($color);
+	border: rem-calc(1) solid smartscale($color, 2%);
+	.card-divider {
+		background: smartscale($color, 15%);
+	}
+	.tag-list .button {
+		@include button-style(
+		$background: $color, // Background color
+		$color: isitlight($color), // Text color
+		$style: solid // Can be solid or hollow
+		);
+	}
+	.actions-cog {
+		cursor: pointer;
+		& * {
+			fill: $color;
+			stroke: $color;
+		}
+	}
+	.switch > label {
+		background: smartscale($color, 15%);
+		&:after {
+			background: $color;
+			border-color: smartscale($color, 15%);
+		}
+	}
+	.switch input:checked + label {
+		background: smartscale($color, 40%);
+		&:after{
+			border-color: smartscale($color, 40%);
+		}
+	}
+}
+
+
+.menu-bar{
+	margin-bottom: $global-padding !important;
+}
+
+//New Task Form
+//Remove gap around modal form
+.modal{
+	padding: 0 !important;
+}
+//Add some spacing above the new task / edit task form
+.taskForm{
+	padding-top: $global-padding;
+}
+//Remove gap on right side of right floated buttons
+.button.float-right{
+	margin: 0 0 $global-padding $global-padding;
+}
+// Task search input field
+.task-search{
+	.inline-label{
+		margin-top: 0;
+	}
+	input{
+		padding: 0.55em 1em;
+	}
+	margin-right: $global-padding;
+}
+
+// Browse by tag button
+.browsebytag{
+	padding-right: 2rem !important;
+	&::after{
+		@include css-triangle(
+		$triangle-size: 0.48rem,
+		$triangle-color: #FFF,
+		$triangle-direction:left
+		);
+		position: absolute;
+		right: 0;
+		margin-right: 1.5rem;
+		top: 0.78rem;
+	}
+}
+// Customized task card
+.task-card{
+	$card-default: #fff;
+	label{
+		color: inherit;
+	}
+	.card-section a{
+		color: inherit;
+		text-decoration: underline;
+		cursor: pointer;
+		display: block;
+		margin-top: 1em;
+	}
+	@include card-container(
+		$background: $card-default,
+		$color: smartscale($card-default,65%),
+		$border: rem-calc(1) solid smartscale($card-default,2%),
+		$radius: $global-radius,
+		$shadow: 0 1px 2px rgba(#000,0.2),
+		$padding: $global-padding,
+		$margin: 2rem
+	);
+	// Prevent actionsheets inside cards from being clipped
+	overflow: visible !important;
+
+	.tag-list .button {
+		margin-right: 0.5em;
+		@include button-style(
+		$background: $card-default, // Background color
+		$color: isitlight($card-default), // Text color
+		$style: solid // Can be solid or hollow
+		);
+	}
+	// Change color of the actions cog iconic svg
+	.actions-cog {
+		cursor: pointer;
+		& * {
+			fill: $card-default;
+			stroke: $card-default;
+		}
+	}
+
+	// Create gap above task card actionsheet as there's no label before the ul
+	.action-sheet {
+		.button {
+			display:block;
+			margin: 0;
+		}
+		.iconic-color-primary *, .iconic-color-primary *.iconic-property-accent {
+			fill: $primary-color;
+			stroke: $primary-color;
+		}
+		.iconic-color-success *, .iconic-color-success *.iconic-property-accent {
+			fill: $success-color;
+			stroke: $success-color;
+		}
+		.iconic-color-warning * {
+			fill: $warning-color;
+			stroke: $warning-color;
+		}
+	}
+
+	// This is a card divider
+	.card-divider {
+		@include card-divider(
+		$background: smartscale($card-default, 15%),
+		$padding: $global-padding $global-padding 0 $global-padding
+		);
+	}
+
+	// This is a card section
+	.card-section {
+		@include card-section(
+		$padding: $global-padding
+		);
+	}
+
+	.switch > label {
+		background: smartscale($card-default, 15%);
+		&:after {
+			background: $card-default;
+			border-color: smartscale($card-default, 15%);
+		}
+	}
+	.switch input:checked + label {
+		background: smartscale($card-default, 40%);
+		&:after{
+			border-color: smartscale($card-default, 40%);
+		}
+	}
+	// Alternate card colors
+	&.primary {
+		@include card_color($primary-color)
+	}
+	&.secondary {
+		@include card_color($secondary-color)
+	}
+	&.success {
+		@include card_color($success-color)
+	}
+	&.alert {
+		@include card_color($alert-color)
+	}
+	&.warning {
+		@include card_color($warning-color)
+	}
+
+	&.complete {
+		position: relative;
+		h4, p {
+			text-decoration: line-through;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: -1px;
+			right: -1px;
+			bottom: -1px;
+			left: -1px;
+			background: rgba(255, 255, 255, 0.5);
+			z-index: 2;
+			pointer-events: none;
+		}
+	}
+}
+// To create grey buttons
+.grey {
+	// Use the style mixin to set visual styles
+	@include button-style(
+	$background: #eee, // Background color
+	$color: #333, // Text color
+	$style: solid // Can be solid or hollow
+	);
+	border: rem-calc(1) solid #ccc !important;
+}
+
+// To create white buttons
+.white {
+	// Use the style mixin to set visual styles
+	@include button-style(
+	$background: #fff, // Background color
+	$color: #333, // Text color
+	$style: solid // Can be solid or hollow
+	);
+}

@@ -1,0 +1,37 @@
+Designing Icons for the Web
+Learn techniques and best practices for designing smart, visually interesting web
+icons in any software, in this guide with senior author James Williamson. First,
+find out what makes icons most effective and how to plan your design right from the start.
+Then review the best practices for brainstorming, sketching your ideas, and finding the
+right visual metaphors. James shows how to build your designs at high resolutions and
+create variations that will work at smaller sizes. Finally, learn how to export
+your work to multiple file types, and optimize SVGs, one of the most popular formats
+for icons.
+Web, Illustrator, Photoshop, James Williamson
+
+Building a Polling App with Socket IO and React.js
+Socket technology is a natural fit for presentation and chat applications.
+This course helps you use Socket IO in combination with powerful JavaScript libraries to
+develop an interactive polling application that processes data in real time, allowing
+presenters to interact with audience members and graph their responses.
+Socket IO, React.js, Polling App, Alex Banks
+
+Up and Running with ASP.NET 5
+ASP.NET 5, Microsoft's latest web development framework, includes an optimized developer experience,
+better performing runtime, and cross-platform support for Windows, Mac, and Linux. With all this change,
+many developers find they could use a refresher. In this course, Jess Chadwick introduces the basics to get
+you up and running with ASP.NET 5, and creating and deploying your own professional quality applications.
+He explores setup and installation, working with the ASP.NET MVC 6 framework, and the techniques you need to
+manage data, reuse code, construct web APIs, and secure your new applications. After you've built your
+application, Jess will show you how to deploy it to both IIS server and Microsoft Azure.
+Developer, ASP.NET 5, Microsoft, Jess Chadwick
+
+Build a Microblogging App With Flux and React
+Flux is an architecture for React applications. It was developed by Facebook to complement the strengths of the React view framework.
+In this course, we'll build a simple Twitter clone using the Flux architecture, with React powering the views.
+React, Flux, JavaScript, Node.js, Express, Passport
+
+Performance Matters: Optimizing Page Load
+In this course you’ll learn how to improve web-page performance. We’ll cover what that means, why it’s so important to consider, and
+how you can optimize your web pages so they perform well.
+Performance, Performance Optimization
